@@ -1,6 +1,6 @@
 import { magic } from "../lib/magic";
 import { useNavigate } from "react-router-dom";
-import { FaTwitter, FaFacebook, FaDiscord, FaGoogle, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaFacebook, FaDiscord, FaGoogle, FaGithub, FaLinkedin, FaBitbucket, FaTwitch } from "react-icons/fa";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -45,6 +45,18 @@ const Login = () => {
     handleSocialLogin('github');
   }
 
+  const handleLinkedinLogin = async () => {
+    handleSocialLogin('linkedin');
+  }
+
+  const handleBitbucketLogin = async () => {
+    handleSocialLogin('bitbucket');
+  }
+
+  const handleTwitchLogin = async () => {
+    handleSocialLogin('twitch');
+  }
+
   return (
     <div className="container">
     <h1>Magic OAuth v2</h1>
@@ -75,6 +87,21 @@ const Login = () => {
       <button onClick={handleGithubLogin}>
         <FaGithub size={"2.5rem"} />
         Log in with Github
+      </button>
+      <br />
+      <button onClick={handleLinkedinLogin}>
+        <FaLinkedin size={"2.5rem"} />
+        Log in with LinkedIn
+      </button>
+      <br />
+      <button onClick={handleBitbucketLogin}>
+        <FaBitbucket size={"2.5rem"} />
+        Log in with Bitbucket
+      </button>
+      <br />
+      <button onClick={handleTwitchLogin}>
+        <FaTwitch size={"2.5rem"} />
+        Log in with Twitch
       </button>
     </div>
   );
