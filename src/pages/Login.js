@@ -1,6 +1,6 @@
 import { magic } from "../lib/magic";
 import { useNavigate } from "react-router-dom";
-import { FaTwitter, FaFacebook, FaDiscord, FaGoogle } from "react-icons/fa";
+import { FaTwitter, FaFacebook, FaDiscord, FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -41,6 +41,10 @@ const Login = () => {
     handleSocialLogin('discord');
   }
 
+  const handleGithubLogin = async () => {
+    handleSocialLogin('github');
+  }
+
   return (
     <div className="container">
     <h1>Magic OAuth v2</h1>
@@ -66,6 +70,11 @@ const Login = () => {
       <button onClick={handleDiscordLogin}>
         <FaDiscord size={"2.5rem"} />
         Log in with Discord
+      </button>
+      <br />
+      <button onClick={handleGithubLogin}>
+        <FaGithub size={"2.5rem"} />
+        Log in with Github
       </button>
     </div>
   );
