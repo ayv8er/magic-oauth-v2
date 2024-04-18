@@ -1,4 +1,4 @@
 Magic OAuth v2
 
-magic-sdk
-@magic-ext/oauth2
+- magic-sdk
+- @magic-ext/oauth2
