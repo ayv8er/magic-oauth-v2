@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+import OauthDashboard from "./pages/OauthDashboard";
+import EmailDashboard from "./pages/EmailDashboard";
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/oauth-dashboard" element={<OauthDashboard />} />
+          <Route path="/email-dashboard" element={<EmailDashboard />} />
         </Routes>
       </Router>
     </div>
