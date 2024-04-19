@@ -1,6 +1,17 @@
 import { magic } from "../lib/magic";
 import { useNavigate } from "react-router-dom";
-import { FaTwitter, FaFacebook, FaDiscord, FaGoogle, FaGithub, FaLinkedin, FaBitbucket, FaTwitch } from "react-icons/fa";
+import { 
+  FaTwitter, 
+  FaFacebook, 
+  FaDiscord, 
+  FaGoogle, 
+  FaGithub, 
+  FaLinkedin, 
+  FaBitbucket, 
+  FaTwitch, 
+  FaMicrosoft, 
+  FaGitlab 
+} from "react-icons/fa";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -25,38 +36,6 @@ const Login = () => {
     }
   };
 
-  const handleGoogleLogin = async () => {
-    handleSocialLogin('google');
-  }
-
-  const handleTwitterLogin = async () => {
-    handleSocialLogin('twitter');
-  }
-
-  const handleFacebookLogin = async () => {
-    handleSocialLogin('facebook');
-  }
-
-  const handleDiscordLogin = async () => {
-    handleSocialLogin('discord');
-  }
-
-  const handleGithubLogin = async () => {
-    handleSocialLogin('github');
-  }
-
-  const handleLinkedinLogin = async () => {
-    handleSocialLogin('linkedin');
-  }
-
-  const handleBitbucketLogin = async () => {
-    handleSocialLogin('bitbucket');
-  }
-
-  const handleTwitchLogin = async () => {
-    handleSocialLogin('twitch');
-  }
-
   return (
     <div className="container">
     <h1>Magic OAuth v2</h1>
@@ -64,44 +43,54 @@ const Login = () => {
         Login with Email OTP
       </button>
       <br />
-      <button onClick={handleGoogleLogin}>
+      <button onClick={() => handleSocialLogin('google')}>
         <FaGoogle size={"2.5rem"} />
         Log in with Google
       </button>
       <br />
-      <button onClick={handleTwitterLogin}>
+      <button onClick={() => handleSocialLogin('twitter')}>
         <FaTwitter size={"2.5rem"} />
         Log in with X (Twitter)
       </button>
       <br />
-      <button onClick={handleFacebookLogin}>
+      <button onClick={() => handleSocialLogin('facebook')}>
         <FaFacebook size={"2.5rem"} />
         Log in with Facebook
       </button>
       <br />
-      <button onClick={handleDiscordLogin}>
+      <button onClick={() => handleSocialLogin('discord')}>
         <FaDiscord size={"2.5rem"} />
         Log in with Discord
       </button>
       <br />
-      <button onClick={handleGithubLogin}>
+      <button onClick={() => handleSocialLogin('github')}>
         <FaGithub size={"2.5rem"} />
         Log in with Github
       </button>
       <br />
-      <button onClick={handleLinkedinLogin}>
+      <button onClick={() => handleSocialLogin('linkedin')}>
         <FaLinkedin size={"2.5rem"} />
         Log in with LinkedIn
       </button>
       <br />
-      <button onClick={handleBitbucketLogin}>
+      <button onClick={() => handleSocialLogin('bitbucket')}>
         <FaBitbucket size={"2.5rem"} />
         Log in with Bitbucket
       </button>
       <br />
-      <button onClick={handleTwitchLogin}>
+      <button onClick={() => handleSocialLogin('twitch')}>
         <FaTwitch size={"2.5rem"} />
         Log in with Twitch
+      </button>
+      <br />
+      <button onClick={() => handleSocialLogin('microsoft')}>
+        <FaMicrosoft size={"2.5rem"} />
+        Log in with Microsoft
+      </button>
+      <br />
+      <button onClick={() => handleSocialLogin('gitlab')}>
+        <FaGitlab size={"2.5rem"} />
+        Log in with GitLab
       </button>
     </div>
   );
