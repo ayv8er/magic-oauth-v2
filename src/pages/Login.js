@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { magic } from "../lib/magic";
 import { useNavigate } from "react-router-dom";
 import { 
@@ -16,25 +17,26 @@ import {
 const Login = () => {
   const navigate = useNavigate();
 
-  const handleEmailOtpLogin = async () => {
+  const handleEmailOtpLogin = useCallback(async () => {
     try {
-      await magic.wallet.connectWithUI();
-      navigate("/email-dashboard");
+      const did = await magic.wallet.connectWithUI();
+      if (did) navigate("/dashboard");
     } catch (err) {
       console.error(err);
     }
-  }
+  }, [navigate]);
 
-  const handleSocialLogin = async (provider) => {
+  const handleSocialLogin = useCallback(async (provider) => {
     try {
+      localStorage.setItem("isOauthRedirect", true);
       await magic.oauth2.loginWithRedirect({
         provider,
-        redirectURI: new URL("/oauth-dashboard", window.location.origin).href,
+        redirectURI: new URL("/dashboard", window.location.origin).href,
       });
     } catch (err) {
       console.error(err);
     }
-  };
+  }, []);
 
   return (
     <div className="container">
