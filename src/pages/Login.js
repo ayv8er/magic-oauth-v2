@@ -19,8 +19,8 @@ const Login = () => {
 
   const handleEmailOtpLogin = useCallback(async () => {
     try {
-      const did = await magic.wallet.connectWithUI();
-      if (did) navigate("/dashboard");
+      const accounts = await magic.wallet.connectWithUI();
+      if (accounts) navigate("/dashboard");
     } catch (err) {
       console.error(err);
     }

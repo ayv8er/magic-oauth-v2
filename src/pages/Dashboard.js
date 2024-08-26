@@ -2,7 +2,7 @@ import { useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { magic } from "../lib/magic";
 
-const OAuthDashboard = ({ logout, printMetadata, getMetadata, user, setUser }) => {
+const Dashboard = ({ logout, printMetadata, getMetadata, user, setUser }) => {
   const navigate = useNavigate();
 
   const finishSocialLogin = useCallback(async () => {
@@ -48,4 +48,4 @@ const OAuthDashboard = ({ logout, printMetadata, getMetadata, user, setUser }) =
   );
 };
 
-export default OAuthDashboard;
+export default Dashboard;
