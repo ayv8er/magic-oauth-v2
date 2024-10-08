@@ -8,6 +8,7 @@ const Dashboard = ({ logout, printMetadata, getMetadata, user, setUser }) => {
   const finishSocialLogin = useCallback(async () => {
     try {
       const data = await magic.oauth2.getRedirectResult();
+      console.log(data)
       setUser(data.magic.userMetadata)
     } catch (err) {
       navigate("/");
